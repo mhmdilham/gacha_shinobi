@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased min-h-screen selection:bg-red-500 selection:text-white;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(220, 38, 38, 0.15), transparent 45%),
+      radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.1), transparent 40%),
+      radial-gradient(circle at 0% 100%, rgba(168, 85, 247, 0.1), transparent 40%);
+  }
+}
+
+/* Custom Ninja Animations & Effects */
+@keyframes spin-slot {
+  0% { transform: translateY(0); filter: blur(0); }
+  50% { filter: blur(2px); }
+  100% { transform: translateY(-100%); filter: blur(0); }
+}
+
+@keyframes chakra-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4), inset 0 0 10px rgba(239, 68, 68, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(239, 68, 68, 0.8), inset 0 0 20px rgba(239, 68, 68, 0.5);
+  }
+}
+
+@keyframes lightning-flash {
+  0%, 100% { opacity: 0; }
+  10%, 25%, 35% { opacity: 0.9; }
+  20%, 30% { opacity: 0.1; }
+  50% { opacity: 0.8; }
+}
+
+.chakra-glow {
+  animation: chakra-pulse 2.5s infinite ease-in-out;
+}
+
+.lightning-effect {
+  animation: lightning-flash 0.8s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
